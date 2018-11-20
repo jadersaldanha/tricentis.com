@@ -14,23 +14,23 @@ public class SendQuoteTasks {
 		this.quote = new SendQuoteAppObjects (driver); 
 	}
 	
-	public void setEmail () {
+	public void setEmail (String email) {
 		this.quote.getEmail().sendKeys("teste@teste.com");
 	}
 	
-	public void setPhone () {
+	public void setPhone (String phone) {
 		this.quote.getPhone().sendKeys("1231231231");
 	}
 	
-	public void setUsername () {
+	public void setUsername (String username) {
 		this.quote.getUsername().sendKeys("testes");
 	}
 
-	public void setPassword () {
+	public void setPassword (String password) {
 		this.quote.getPassword().sendKeys("Alegrete12345");
 	}
 	
-	public void setConfirmPassword () {
+	public void setConfirmPassword (String confirm) {
 		this.quote.getConfirmPassword().sendKeys("Alegrete12345");
 	}
 	

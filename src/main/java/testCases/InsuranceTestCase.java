@@ -24,12 +24,15 @@ import tasks.SendQuoteTasks;
 public class InsuranceTestCase {
 	private static final String SYSTEM_URL = Config.get("environment.tricentis.com");
 	private static final String DATAPOOL_VEHICLEDATA = Config.get("datapool.vehicledata.pasta");
-	private static final String DATAPOOL_INSURANTDATA = Config.get("datapool.vehicledata.pasta");
-	private static final String DATAPOOL_INSURANTDATA = Config.get("datapool.vehicledata.pasta");
+	private static final String DATAPOOL_INSURANTDATA = Config.get("datapool.insurantdata.pasta");
+	private static final String DATAPOOL_PRODUCTDATA = Config.get("datapool.productdata.pasta");
+	private static final String DATAPOOL_QUOTEDATA = Config.get("datapool.quotedata.pasta");
 	private static final String IMAGEPATH = Config.get("screenshot.pasta");
 	private WebDriver driver;
 	private IDatapool datapoolvehicledata;
 	private IDatapool datapoolinsurantdata;
+	private IDatapool datapoolproductdata;
+	private IDatapool datapoolquotedata;
 	private EnterVehicleDataTasks vehicledata;
 	private EnterInsurantDataTasks insurantdata;
 	private EnterProductDataTasks productdata;
@@ -47,6 +50,8 @@ public class InsuranceTestCase {
 		
 		datapoolvehicledata = new CsvDatapool(DATAPOOL_VEHICLEDATA);
 		datapoolinsurantdata = new CsvDatapool(DATAPOOL_INSURANTDATA);
+		datapoolproductdata = new CsvDatapool(DATAPOOL_PRODUCTDATA);
+		datapoolquotedata = new CsvDatapool(DATAPOOL_QUOTEDATA);
 		this.vehicledata = new EnterVehicleDataTasks(driver);
 		this.insurantdata = new EnterInsurantDataTasks(driver);
 		this.productdata = new EnterProductDataTasks(driver);
@@ -71,35 +76,35 @@ public class InsuranceTestCase {
 			this.vehicledata.setAnnualMileage(datapoolvehicledata.getValue("annual"));
 			this.vehicledata.next();
 			
-			this.insurantdata.setFirstName(datapoolvehicledata.getValue("first"));
-			this.insurantdata.setLastName(datapoolvehicledata.getValue("last"));
-			this.insurantdata.setDateOfBirth(datapoolvehicledata.getValue("date"));
+			this.insurantdata.setFirstName(datapoolinsurantdata.getValue("first"));
+			this.insurantdata.setLastName(datapoolinsurantdata.getValue("last"));
+			this.insurantdata.setDateOfBirth(datapoolinsurantdata.getValue("date"));
 			this.insurantdata.setGender();
-			this.insurantdata.setStreetAddress(datapoolvehicledata.getValue("street"));
-			this.insurantdata.setCountry(datapoolvehicledata.getValue("country"));
-			this.insurantdata.setZipCode(datapoolvehicledata.getValue("zip"));
-			this.insurantdata.setCity(datapoolvehicledata.getValue("city"));
-			this.insurantdata.setOccupation(datapoolvehicledata.getValue("occupation"));
+			this.insurantdata.setStreetAddress(datapoolinsurantdata.getValue("street"));
+			this.insurantdata.setCountry(datapoolinsurantdata.getValue("country"));
+			this.insurantdata.setZipCode(datapoolinsurantdata.getValue("zip"));
+			this.insurantdata.setCity(datapoolinsurantdata.getValue("city"));
+			this.insurantdata.setOccupation(datapoolinsurantdata.getValue("occupation"));
 			this.insurantdata.setHobbies();
-			this.insurantdata.setWebSite(datapoolvehicledata.getValue("website"));
+			this.insurantdata.setWebSite(datapoolinsurantdata.getValue("wesite"));
 			this.insurantdata.setPicture();
 			this.insurantdata.setNext();
 			
-			this.productdata.setStartDate();
-			this.productdata.setInsuranceSum();
-			this.productdata.setMeritRating();
-			this.productdata.setDamageInsurance();
+			this.productdata.setStartDate(datapoolproductdata.getValue("start"));
+			this.productdata.setInsuranceSum(datapoolproductdata.getValue("insurance"));
+			this.productdata.setMeritRating(datapoolproductdata.getValue("merit"));
+			this.productdata.setDamageInsurance(datapoolproductdata.getValue("damage"));
 			this.productdata.setOptionalProducts();
-			this.productdata.setCourtesyCar();
+			this.productdata.setCourtesyCar(datapoolproductdata.getValue("courtesy"));
 			this.productdata.setNext();
 			this.productdata.selectSilver();			
 			this.productdata.sendQuote();
 			
-			this.quote.setEmail();
-			this.quote.setPhone();
-			this.quote.setUsername();
-			this.quote.setPassword();
-			this.quote.setConfirmPassword();
+			this.quote.setEmail(datapoolquotedata.getValue("email"));
+			this.quote.setPhone(datapoolquotedata.getValue("phone"));
+			this.quote.setUsername(datapoolquotedata.getValue("username"));
+			this.quote.setPassword(datapoolquotedata.getValue("password"));
+			this.quote.setConfirmPassword(datapoolquotedata.getValue("confirm"));
 			this.quote.setSendEmail();
 	}
 	
