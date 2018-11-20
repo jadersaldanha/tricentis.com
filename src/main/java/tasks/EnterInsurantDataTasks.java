@@ -17,48 +17,48 @@ public class EnterInsurantDataTasks {
 		this.insurantdata = new EnterInsurantDataAppObject (driver); 
 	}
 	
-	public void setFirstName () {
-		this.insurantdata.getFirstName().sendKeys("jader");
+	public void setFirstName (String first) {
+		this.insurantdata.getFirstName().sendKeys(first);
 	}
 	
-	public void setLastName () {
-		this.insurantdata.getLastName().sendKeys("saldanha");
+	public void setLastName (String last) {
+		this.insurantdata.getLastName().sendKeys(last);
 	}
 	
-	public void setDateOfBirth () {
-		this.insurantdata.getDateOfBirth().sendKeys("12/10/1990");
+	public void setDateOfBirth (String date) {
+		this.insurantdata.getDateOfBirth().sendKeys(date);
 	}
 	
 	public void setGender () {
 		this.insurantdata.getGender().click();
 	}
 	
-	public void setStreetAddress () {
-		this.insurantdata.getStreetAddress().sendKeys("colombia");
+	public void setStreetAddress (String street) {
+		this.insurantdata.getStreetAddress().sendKeys(street);
 	}
 	
-	public void setCountry () {
-		this.insurantdata.getCountry().sendKeys("brazil");
+	public void setCountry (String country) {
+		this.insurantdata.getCountry().sendKeys(country);
 	}
 	
-	public void setZipCode () {
-		this.insurantdata.getZipCode().sendKeys("98128999");
+	public void setZipCode (String zip) {
+		this.insurantdata.getZipCode().sendKeys(zip);
 	}
 	
-	public void setCity () {
-		this.insurantdata.getCity().sendKeys("porto alegre");
+	public void setCity (String city) {
+		this.insurantdata.getCity().sendKeys(city);
 	}
 	
-	public void setOccupation () {
-		this.insurantdata.getOccupation().sendKeys("Employee");
+	public void setOccupation (String occupation) {
+		this.insurantdata.getOccupation().sendKeys(occupation);
 	}
 
 	public void setHobbies () {
 		this.insurantdata.getHobbies().click();
 	}
 	
-	public void setWebSite () {
-		this.insurantdata.getWebSite().sendKeys("www.com.br");
+	public void setWebSite (String website) {
+		this.insurantdata.getWebSite().sendKeys(website);
 	}
 	
 	public void setPicture () {

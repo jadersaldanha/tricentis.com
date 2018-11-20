@@ -18,28 +18,28 @@ public class EnterProductDataTasks {
 		this.productdata = new EnterProductDataAppObjects (driver); 
 	}
 	
-	public void setStartDate () {
-		this.productdata.getStartDate().sendKeys("10/12/2019");
+	public void setStartDate (String start) {
+		this.productdata.getStartDate().sendKeys(start);
 	}
 	
-	public void setInsuranceSum () {
-		this.productdata.getInsuranceSum().sendKeys("3.000.000,00");
+	public void setInsuranceSum (String sum) {
+		this.productdata.getInsuranceSum().sendKeys(sum);
 	}
 	
-	public void setMeritRating () {
-		this.productdata.getMeritRating().sendKeys("Super Bonus");
+	public void setMeritRating (String merit) {
+		this.productdata.getMeritRating().sendKeys(merit);
 	}
 	
-	public void setDamageInsurance () {
-		this.productdata.getDamageInsurance().sendKeys("No coverage");
+	public void setDamageInsurance (String damage) {
+		this.productdata.getDamageInsurance().sendKeys(damage);
 	}
 	
 	public void setOptionalProducts () {
 		this.productdata.getOptionalProducts().click();
 	}
 	
-	public void setCourtesyCar () {
-		this.productdata.getCourtesyCar().sendKeys("yes");
+	public void setCourtesyCar (String courtesy) {
+		this.productdata.getCourtesyCar().sendKeys(courtesy);
 	}
 	
 	public void setNext () {

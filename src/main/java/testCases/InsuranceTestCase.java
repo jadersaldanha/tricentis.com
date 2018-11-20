@@ -22,11 +22,14 @@ import tasks.SendQuoteTasks;
 
 
 public class InsuranceTestCase {
-	private static final String SYSTEM_URL = Config.get("environment.taglivros.areausuario");
-	private static final String DATAPOOL = Config.get("datapool.pasta");
+	private static final String SYSTEM_URL = Config.get("environment.tricentis.com");
+	private static final String DATAPOOL_VEHICLEDATA = Config.get("datapool.vehicledata.pasta");
+	private static final String DATAPOOL_INSURANTDATA = Config.get("datapool.vehicledata.pasta");
+	private static final String DATAPOOL_INSURANTDATA = Config.get("datapool.vehicledata.pasta");
 	private static final String IMAGEPATH = Config.get("screenshot.pasta");
 	private WebDriver driver;
-	private IDatapool datapool;
+	private IDatapool datapoolvehicledata;
+	private IDatapool datapoolinsurantdata;
 	private EnterVehicleDataTasks vehicledata;
 	private EnterInsurantDataTasks insurantdata;
 	private EnterProductDataTasks productdata;
@@ -42,7 +45,8 @@ public class InsuranceTestCase {
 		this.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		
-		datapool = new CsvDatapool(DATAPOOL);
+		datapoolvehicledata = new CsvDatapool(DATAPOOL_VEHICLEDATA);
+		datapoolinsurantdata = new CsvDatapool(DATAPOOL_INSURANTDATA);
 		this.vehicledata = new EnterVehicleDataTasks(driver);
 		this.insurantdata = new EnterInsurantDataTasks(driver);
 		this.productdata = new EnterProductDataTasks(driver);
@@ -51,33 +55,33 @@ public class InsuranceTestCase {
 	
 	@Test
 	public void testMain() throws InterruptedException {
-			this.vehicledata.setMake();
-			this.vehicledata.setModel();
-			this.vehicledata.setCylinderCapacity();
-			this.vehicledata.setEnginePerformance();
-			this.vehicledata.setDateOfManufacture();
-			this.vehicledata.setNumberOfSeats();
+			this.vehicledata.setMake(datapoolvehicledata.getValue("make"));
+			this.vehicledata.setModel(datapoolvehicledata.getValue("model"));
+			this.vehicledata.setCylinderCapacity(datapoolvehicledata.getValue("cylinder"));
+			this.vehicledata.setEnginePerformance(datapoolvehicledata.getValue("engine"));
+			this.vehicledata.setDateOfManufacture(datapoolvehicledata.getValue("date"));
+			this.vehicledata.setNumberOfSeats(datapoolvehicledata.getValue("numberseats"));
 			this.vehicledata.setRightHandDriver();
-			this.vehicledata.setNumberOfSeats2();
-			this.vehicledata.setFuelType();
-			this.vehicledata.setPayload();
-			this.vehicledata.setTotalWeight();
-			this.vehicledata.setListPrice();
-			this.vehicledata.setLicensePlate();
-			this.vehicledata.setAnnualMileage();
+			this.vehicledata.setNumberOfSeats2(datapoolvehicledata.getValue("numberseats2"));
+			this.vehicledata.setFuelType(datapoolvehicledata.getValue("fuel"));
+			this.vehicledata.setPayload(datapoolvehicledata.getValue("payload"));
+			this.vehicledata.setTotalWeight(datapoolvehicledata.getValue("total"));
+			this.vehicledata.setListPrice(datapoolvehicledata.getValue("list"));
+			this.vehicledata.setLicensePlate(datapoolvehicledata.getValue("license"));
+			this.vehicledata.setAnnualMileage(datapoolvehicledata.getValue("annual"));
 			this.vehicledata.next();
 			
-			this.insurantdata.setFirstName();
-			this.insurantdata.setLastName();
-			this.insurantdata.setDateOfBirth();
+			this.insurantdata.setFirstName(datapoolvehicledata.getValue("first"));
+			this.insurantdata.setLastName(datapoolvehicledata.getValue("last"));
+			this.insurantdata.setDateOfBirth(datapoolvehicledata.getValue("date"));
 			this.insurantdata.setGender();
-			this.insurantdata.setStreetAddress();
-			this.insurantdata.setCountry();
-			this.insurantdata.setZipCode();
-			this.insurantdata.setCity();
-			this.insurantdata.setOccupation();
+			this.insurantdata.setStreetAddress(datapoolvehicledata.getValue("street"));
+			this.insurantdata.setCountry(datapoolvehicledata.getValue("country"));
+			this.insurantdata.setZipCode(datapoolvehicledata.getValue("zip"));
+			this.insurantdata.setCity(datapoolvehicledata.getValue("city"));
+			this.insurantdata.setOccupation(datapoolvehicledata.getValue("occupation"));
 			this.insurantdata.setHobbies();
-			this.insurantdata.setWebSite();
+			this.insurantdata.setWebSite(datapoolvehicledata.getValue("website"));
 			this.insurantdata.setPicture();
 			this.insurantdata.setNext();
 			

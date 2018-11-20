@@ -14,56 +14,56 @@ public class EnterVehicleDataTasks {
 		this.vehicledata = new EnterVehicleDataAppObjects(driver); 
 	}
 	
-	public void setMake () {
-		this.vehicledata.getMake().sendKeys("Audi");
+	public void setMake (String make) {
+		this.vehicledata.getMake().sendKeys(make);
 	}
 	
-	public void setModel () {
-		this.vehicledata.getModel().sendKeys("Scooter");
+	public void setModel (String model) {
+		this.vehicledata.getModel().sendKeys(model);
 	}
 	
-	public void setCylinderCapacity () {
-		this.vehicledata.getCylinderCapacity().sendKeys("99");
+	public void setCylinderCapacity (String cylinder) {
+		this.vehicledata.getCylinderCapacity().sendKeys(cylinder);
 	}
 
-	public void setEnginePerformance () {
-		this.vehicledata.getEngine().sendKeys("99");
+	public void setEnginePerformance (String engine) {
+		this.vehicledata.getEngine().sendKeys(engine);
 	}
 	
-	public void setDateOfManufacture () {
-		this.vehicledata.getDate().sendKeys("10/14/1990");
+	public void setDateOfManufacture (String date) {
+		this.vehicledata.getDate().sendKeys(date);
 	}
 	
-	public void setNumberOfSeats () {
-		this.vehicledata.getNumberOfSeats().sendKeys("2");
+	public void setNumberOfSeats (String seats) {
+		this.vehicledata.getNumberOfSeats().sendKeys(seats);
 	}
 	
-	public void setNumberOfSeats2 () {
-		this.vehicledata.getNumberOfSeats2().sendKeys("2");
+	public void setNumberOfSeats2 (String seats2) {
+		this.vehicledata.getNumberOfSeats2().sendKeys(seats2);
 	}
 	
-	public void setFuelType () {
-		this.vehicledata.getFuelType().sendKeys("Petrol");
+	public void setFuelType (String fuel) {
+		this.vehicledata.getFuelType().sendKeys(fuel);
 	}
 	
-	public void setPayload () {
-		this.vehicledata.getPayload().sendKeys("90");
+	public void setPayload (String payload) {
+		this.vehicledata.getPayload().sendKeys(payload);
 	}
 	
-	public void setTotalWeight () {
-		this.vehicledata.getTotalWeight().sendKeys("900");
+	public void setTotalWeight (String weight) {
+		this.vehicledata.getTotalWeight().sendKeys(weight);
 	}
 	
-	public void setListPrice () {
-		this.vehicledata.getListPrice().sendKeys("900");
+	public void setListPrice (String list) {
+		this.vehicledata.getListPrice().sendKeys(list);
 	}
 	
-	public void setLicensePlate () {
-		this.vehicledata.getLicensePlate().sendKeys("asd2312");
+	public void setLicensePlate (String license) {
+		this.vehicledata.getLicensePlate().sendKeys(license);
 	}
 	
-	public void setAnnualMileage () {
-		this.vehicledata.getAnnualMileage().sendKeys("900");
+	public void setAnnualMileage (String annual) {
+		this.vehicledata.getAnnualMileage().sendKeys(annual);
 	}
 	
 	public void setRightHandDriver () {
