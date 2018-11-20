@@ -27,7 +27,7 @@ Onde: appObjects representa o pacote com as classes que identificam elementos da
 
 Para executar o projeto é muito fácil \o/ basta seguir os passos:
 
-Fazer o download do projeto tagLivros;
+Fazer o download do projeto;
 Na pasta do projeto clicar duas vezes no arquivo "FillingInsurantTestSuite.jar";
 Aguarde a execução dos testes \o/;
 Verifique a execução dos testes nas pastas "reports" e "screenshots".
