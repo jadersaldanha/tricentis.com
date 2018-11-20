@@ -1,16 +1,12 @@
 package tasks;
 
 import org.openqa.selenium.WebDriver;
-
-import appObjects.EnterVehicleDataAppObjects;
 import appObjects.SendQuoteAppObjects;
 
 public class SendQuoteTasks {
 	private final SendQuoteAppObjects quote;
-	private WebDriver driver;
 	
 	public SendQuoteTasks (WebDriver driver) {
-		this.driver = driver;
 		this.quote = new SendQuoteAppObjects (driver); 
 	}
 	

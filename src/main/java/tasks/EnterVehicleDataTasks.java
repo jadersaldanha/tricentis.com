@@ -6,11 +6,9 @@ import appObjects.EnterVehicleDataAppObjects;
 
 public class EnterVehicleDataTasks {
 	
-	private final EnterVehicleDataAppObjects vehicledata;
-	private WebDriver driver;
+	private final EnterVehicleDataAppObjects vehicledata;	
 	
 	public EnterVehicleDataTasks (WebDriver driver) {
-		this.driver = driver;
 		this.vehicledata = new EnterVehicleDataAppObjects(driver); 
 	}
 	

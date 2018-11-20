@@ -13,7 +13,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import support.DateTimeUtils;
 
 public class Report {
-	private static final String DEFAULT_DESCRIPTION = "TAGLIVROS CHECKOUT - TEST SUITE";
+	private static final String DEFAULT_DESCRIPTION = "VEHICLE INSURANCE - TEST SUITE";
 	private static final String DEFAULT_PATH = "./reports/report_%s.html";
 	private static ExtentReports extentReport;
 	private static ExtentTest logger;

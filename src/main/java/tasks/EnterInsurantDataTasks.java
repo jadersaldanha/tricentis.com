@@ -1,19 +1,16 @@
 package tasks;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
+import org.openqa.selenium.WebDriver;
 import appObjects.EnterInsurantDataAppObject;
-import appObjects.EnterVehicleDataAppObjects;
+
 
 public class EnterInsurantDataTasks {
 	
-	private final EnterInsurantDataAppObject insurantdata;
-	private WebDriver driver;
+	private final EnterInsurantDataAppObject insurantdata;	
 	
 	public EnterInsurantDataTasks (WebDriver driver) {
-		this.driver = driver;
+		
 		this.insurantdata = new EnterInsurantDataAppObject (driver); 
 	}
 	
