@@ -1,4 +1,4 @@
-# tricentis.com
+﻿# tricentis.com
 
 Olá!
 
@@ -28,6 +28,6 @@ Onde: appObjects representa o pacote com as classes que identificam elementos da
 Para executar o projeto é muito fácil \o/ basta seguir os passos:
 
 Fazer o download do projeto tagLivros;
-Na basta do projeto tagLivros clicar duas vezes no arquivo "FillingInsurantTestSuite.jar";
+Na pasta do projeto clicar duas vezes no arquivo "FillingInsurantTestSuite.jar";
 Aguarde a execução dos testes \o/;
 Verifique a execução dos testes nas pastas "reports" e "screenshots".
