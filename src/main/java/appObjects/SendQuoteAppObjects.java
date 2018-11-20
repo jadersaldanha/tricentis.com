@@ -4,36 +4,36 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class EnterVehicleDataAppObjects {
+public class SendQuoteAppObjects {
 	
 	private WebDriver driver; 
 	
-	public EnterVehicleDataAppObjects (WebDriver driver) {
+	public SendQuoteAppObjects (WebDriver driver) {
 		this.driver = driver;		
 	}
 
-	public WebElement getMake () {
-		return driver.findElement(By.id("make"));
+	public WebElement getEmail () {
+		return driver.findElement(By.id("email"));
 	}
 	
-	public WebElement getModel () {
-		return driver.findElement(By.id("model"));
+	public WebElement getPhone () {
+		return driver.findElement(By.id("phone"));
 	}
 	
-	public WebElement getCylinderCapacity () {
-		return driver.findElement(By.id("cylindercapacity"));
+	public WebElement getUsername () {
+		return driver.findElement(By.id("username"));
 	}
 	
-	public WebElement getEngine () {
-		return driver.findElement(By.id("engineperformance"));
+	public WebElement getPassword () {
+		return driver.findElement(By.id("password"));
 	}
 	
-	public WebElement getDate () {
-		return driver.findElement(By.id("dateofmanufacture"));
+	public WebElement getConfirmPassword () {
+		return driver.findElement(By.id("confirmpassword"));
 	}
 	
-	public WebElement getNumber () {
-		return driver.findElement(By.id("numberofseats"));
+	public WebElement getSendEmail () {
+		return driver.findElement(By.id("sendemail"));
 	}
 	
 	public WebElement getNumberOfSeats () {
@@ -75,4 +75,5 @@ public class EnterVehicleDataAppObjects {
 	public WebElement getNext () {
 		return driver.findElement(By.id("nextenterinsurantdata"));
 	}
+
 }

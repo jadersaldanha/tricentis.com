@@ -14,7 +14,10 @@ import support.CsvDatapool;
 import support.Drivers;
 import support.IDatapool;
 import support.Report;
+import tasks.EnterInsurantDataTasks;
+import tasks.EnterProductDataTasks;
 import tasks.EnterVehicleDataTasks;
+import tasks.SendQuoteTasks;
 
 
 
@@ -25,6 +28,9 @@ public class InsuranceTestCase {
 	private WebDriver driver;
 	private IDatapool datapool;
 	private EnterVehicleDataTasks vehicledata;
+	private EnterInsurantDataTasks insurantdata;
+	private EnterProductDataTasks productdata;
+	private SendQuoteTasks quote;
 
 	@Before
 	public void setUp() {
@@ -38,7 +44,9 @@ public class InsuranceTestCase {
 		
 		datapool = new CsvDatapool(DATAPOOL);
 		this.vehicledata = new EnterVehicleDataTasks(driver);
-	
+		this.insurantdata = new EnterInsurantDataTasks(driver);
+		this.productdata = new EnterProductDataTasks(driver);
+		this.quote = new SendQuoteTasks(driver);
 	}
 	
 	@Test
@@ -49,7 +57,7 @@ public class InsuranceTestCase {
 			this.vehicledata.setEnginePerformance();
 			this.vehicledata.setDateOfManufacture();
 			this.vehicledata.setNumberOfSeats();
-			//sthis.vehicledata.setRightHandDriver();
+			this.vehicledata.setRightHandDriver();
 			this.vehicledata.setNumberOfSeats2();
 			this.vehicledata.setFuelType();
 			this.vehicledata.setPayload();
@@ -57,6 +65,38 @@ public class InsuranceTestCase {
 			this.vehicledata.setListPrice();
 			this.vehicledata.setLicensePlate();
 			this.vehicledata.setAnnualMileage();
+			this.vehicledata.next();
+			
+			this.insurantdata.setFirstName();
+			this.insurantdata.setLastName();
+			this.insurantdata.setDateOfBirth();
+			this.insurantdata.setGender();
+			this.insurantdata.setStreetAddress();
+			this.insurantdata.setCountry();
+			this.insurantdata.setZipCode();
+			this.insurantdata.setCity();
+			this.insurantdata.setOccupation();
+			this.insurantdata.setHobbies();
+			this.insurantdata.setWebSite();
+			this.insurantdata.setPicture();
+			this.insurantdata.setNext();
+			
+			this.productdata.setStartDate();
+			this.productdata.setInsuranceSum();
+			this.productdata.setMeritRating();
+			this.productdata.setDamageInsurance();
+			this.productdata.setOptionalProducts();
+			this.productdata.setCourtesyCar();
+			this.productdata.setNext();
+			this.productdata.selectSilver();			
+			this.productdata.sendQuote();
+			
+			this.quote.setEmail();
+			this.quote.setPhone();
+			this.quote.setUsername();
+			this.quote.setPassword();
+			this.quote.setConfirmPassword();
+			this.quote.setSendEmail();
 	}
 	
 	@After

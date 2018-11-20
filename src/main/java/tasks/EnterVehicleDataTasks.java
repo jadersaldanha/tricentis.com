@@ -31,7 +31,7 @@ public class EnterVehicleDataTasks {
 	}
 	
 	public void setDateOfManufacture () {
-		this.vehicledata.getDate().sendKeys("14/10/1990");
+		this.vehicledata.getDate().sendKeys("10/14/1990");
 	}
 	
 	public void setNumberOfSeats () {
@@ -51,7 +51,7 @@ public class EnterVehicleDataTasks {
 	}
 	
 	public void setTotalWeight () {
-		this.vehicledata.getTotalWeight().sendKeys("90");
+		this.vehicledata.getTotalWeight().sendKeys("900");
 	}
 	
 	public void setListPrice () {
@@ -68,5 +68,9 @@ public class EnterVehicleDataTasks {
 	
 	public void setRightHandDriver () {
 		this.vehicledata.getRightHandDrive().click();
+	}
+	
+	public void next () {
+		this.vehicledata.getNext().click();
 	}
 }
